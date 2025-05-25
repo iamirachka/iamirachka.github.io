@@ -1,57 +1,84 @@
+
 ‎<!DOCTYPE html>
-‎<html lang="en">
-‎<head>
-‎  <meta charset="UTF-8" />
-‎  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-‎  <title>Ira's Personal Page</title>
-‎  <style>
-‎    body {
-‎      font-family: Arial, sans-serif;
-‎      background: pink;
-‎      padding: 20px;
-‎      text-align: center;
-‎    }
-‎    .container {
-‎      background: #fff;
-‎      padding: 30px;
-‎      border-radius: 12px;
-‎      box-shadow: 0 0 10px #ccc;
-‎      display: inline-block;
-‎      max-width: 600px;
-‎    }
-‎    a {
-‎      display: block;
-‎      margin: 10px 0;
-‎      color: #007bff;
-‎      text-decoration: none;
-‎    }
-‎    img {
-‎      width: 200px;
-‎      border-radius: 12px;
-‎      margin-bottom: 20px;
-‎    }
-‎    video {
-‎      margin-top: 20px;
-‎      border-radius: 12px;
-‎    }
-‎  </style>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ira - Personal Page</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background: linear-gradient(to right, #ff9a9e, #fad0c4);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .card {
+      background: #fff;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      text-align: center;
+      max-width: 400px;
+      animation: fadeIn 1s ease;
+    }
+    .card img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 5px solid #ff6f91;
+      margin-bottom: 20px;
+    }
+    .card h1 {
+      font-size: 2em;
+      margin-bottom: 10px;
+    
+‎    }
+‎    .card p {
+‎      margin-bottom: 20px;
+‎      font-size: 1.1em;
+‎    }
+‎    .links a {
+‎      display: block;
+‎      background: #ff6f91;
+‎      color: #fff;
+‎      padding: 12px;
+‎      margin: 10px 0;
+‎      border-radius: 30px;
+‎      text-decoration: none;
+‎      font-weight: bold;
+‎      transition: background 0.3s;
+‎    }
+‎    .links a:hover {
+‎      background: #ff3e68;
+‎    }
+‎    @keyframes fadeIn {
+‎      from {opacity: 0; transform: translateY(30px);}
+‎      to {opacity: 1; transform: translateY(0);}
+‎    }
+‎  </style>
 ‎</head>
 ‎<body>
-‎  <div class="container">
-‎    <h1>Ira</h1>
-‎    <img src="https://imgur.com/a/DuEOwqD" alt="Ira's Photo" />
-‎    <p>Welcome to my personal page. Here you can find all my social media links.</p>
-‎    <a href="https://www.instagram.com/iamirachka?igsh=NDg2ZGlwZ3MzM25z" target="_blank">Instagram</a>
-‎    <a href="https://www.tiktok.com/@iamirachka2?_t=ZN-8wenPPolOQY&_r=1" target="_blank">TikTok 1</a>
-‎    <a href="https://www.tiktok.com/@iamirachka.momy?_t=ZN-8wenSmxi6kA&_r=1" target="_blank">TikTok 2</a>
-‎    <a href="https://www.tiktok.com/@irochkaaaaaaa?_t=ZN-8wenUXhnkxC&_r=1" target="_blank">TikTok 3</a>
-‎    <a href="https://www.tiktok.com/@iamirachka3?_t=ZN-8wenaUitqIE&_r=1" target="_blank">TikTok 4</a>
-‎    <a href="https://www.facebook.com/share/1CQAudMrtY/" target="_blank">Facebook</a>
-‎
-‎    <video width="320" height="240" controls>
-‎      <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-‎      Your browser does not support the video tag.
-‎    </video>
-‎  </div>
+‎  <div class="card">
+‎    <img src="https://i.imgur.com/w1UR2kD.jpg" alt="Ira Photo">
+‎    <h1>Ira</h1>
+‎    <p>Welcome to my magical world. Discover all my social accounts below!</p>
+‎    <div class="links">
+‎      <a href="https://instagram.com/ira_username" target="_blank">Instagram</a>
+‎      <a href="https://tiktok.com/@ira1" target="_blank">TikTok 1</a>
+‎      <a href="https://tiktok.com/@ira2" target="_blank">TikTok 2</a>
+      <a href="https://tiktok.com/@ira3" target="_blank">TikTok 3</a>
+‎      <a href="https://tiktok.com/@ira4" target="_blank">TikTok 4</a>
+‎      <a href="https://facebook.com/ira.username" target="_blank">Facebook</a>
+‎    </div>
+‎  </div>
 ‎</body>
 ‎</html>
