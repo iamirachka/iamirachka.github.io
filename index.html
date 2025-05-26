@@ -7,18 +7,8 @@
     body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background-image: 
-    url('https://i.postimg.cc/tJQbDBDp/blue-butterfly.png'),
-    radial-gradient(circle at top left, #fce4ec, #f8bbd0, #fce4ec, #f8bbd0);
-  background-size: 
-    100px,         /* حجم الفراشات */
-    400% 400%;     /* حجم الرخام */
-  background-repeat: 
-    repeat, 
-    no-repeat;
-  background-position: 
-    center center, 
-    center center;
+  background: radial-gradient(circle at top left, #fce4ec, #f8bbd0, #fce4ec, #f8bbd0);
+  background-size: 400% 400%;
   animation: marble 15s ease infinite;
   display: flex;
   justify-content: center;
@@ -26,9 +16,9 @@
 }
 
 @keyframes marble {
-  0% { background-position: center center, 0% 50%; }
-  50% { background-position: center center, 100% 50%; }
-  100% { background-position: center center, 0% 50%; }
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
     .container {
       background: #fff;
