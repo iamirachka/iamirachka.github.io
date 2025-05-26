@@ -1,8 +1,3 @@
-# Since the user requested the final HTML code with the AI chatbot fully integrated into the original design,
-# the assistant will now generate the complete HTML code accordingly.
-
-# Preparing the final HTML with chatbot integration and keeping it ready for output.
-final_html_code = """
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,6 +31,7 @@ final_html_code = """
       box-shadow: 0 10px 20px rgba(0,0,0,0.1);
       text-align: center;
     }
+
     .profile-pic {
       width: 120px;
       height: 120px;
@@ -43,14 +39,17 @@ final_html_code = """
       object-fit: cover;
       margin-bottom: 15px;
     }
+
     h1 {
       font-size: 24px;
       margin: 10px 0 5px;
     }
+
     p {
       color: #666;
       margin: 0 0 20px;
     }
+
     .link {
       display: flex;
       align-items: center;
@@ -65,15 +64,54 @@ final_html_code = """
       box-shadow: 0 4px 6px rgba(0,0,0,0.05);
       transition: 0.3s;
     }
+
     .link:hover {
       background: #e0e0e0;
     }
+
     iframe.video {
       width: 100%;
       height: 240px;
       border-radius: 12px;
       border: none;
       margin-top: 20px;
+    }
+
+    /* Chatbot style */
+    #chatbot {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 300px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      padding: 10px;
+      z-index: 9999;
+    }
+
+    #chatbot h3 {
+      margin-top: 0;
+      color: #e91e63;
+    }
+
+    #chatlog {
+      height: 150px;
+      overflow-y: auto;
+      background: #f9f9f9;
+      border: 1px solid #ccc;
+      padding: 8px;
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+
+    #chatInput {
+      width: 70%;
+      padding: 6px;
+    }
+
+    #chatbot button {
+      padding: 6px;
     }
   </style>
 </head>
@@ -93,15 +131,7 @@ final_html_code = """
     <a class="link" href="#" onclick="openFacebook()">Facebook</a>
   </div>
 
-  <!-- Chatbot -->
-  <div id="iraBot" style="position: fixed; bottom: 20px; right: 20px; width: 320px; background: white; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); padding: 10px;">
-    <h3 style="margin:0; color:#e91e63;">Ira Bot 🤖</h3>
-    <div id="chatArea" style="height: 150px; overflow-y: auto; border: 1px solid #ccc; margin: 10px 0; padding: 5px; background: #f9f9f9;"></div>
-    <input id="userInput" type="text" placeholder="Say something..." style="width: 75%;" />
-    <button onclick="askIraBot()" style="width: 20%;">Send</button>
-  </div>
-
-  <!-- Confetti Effect -->
+  <!-- 🎉 Confetti & celebration sound -->
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
   <audio id="celebration-sound" src="https://cdn.pixabay.com/audio/2022/03/15/audio_621c895f15.mp3" preload="auto"></audio>
 
@@ -133,9 +163,7 @@ final_html_code = """
     };
 
     function openTikTok(username) {
-      const userAgent = navigator.userAgent || navigator.vendor || window.opera;
-      const isMobile = /android|iphone|ipad|ipod/i.test(userAgent);
-
+      const isMobile = /android|iphone|ipad|ipod/i.test(navigator.userAgent);
       if (isMobile) {
         window.location = `tiktok://user/@${username}`;
         setTimeout(() => {
@@ -147,9 +175,7 @@ final_html_code = """
     }
 
     function openFacebook() {
-      const userAgent = navigator.userAgent || navigator.vendor || window.opera;
-      const isMobile = /android|iphone|ipad|ipod/i.test(userAgent);
-
+      const isMobile = /android|iphone|ipad|ipod/i.test(navigator.userAgent);
       if (isMobile) {
         window.location = 'fb://facewebmodal/f?href=https://www.facebook.com/iamirachka';
         setTimeout(() => {
@@ -159,28 +185,36 @@ final_html_code = """
         window.open('https://www.facebook.com/iamirachka', '_blank');
       }
     }
+  </script>
 
-    // Chatbot logic
-    function askIraBot() {
-      const input = document.getElementById('userInput');
-      const chat = document.getElementById('chatArea');
-      const message = input.value;
-      if (!message) return;
+  <!-- 💬 IRA Chatbot -->
+  <div id="chatbot">
+    <h3>Ira Bot</h3>
+    <div id="chatlog"></div>
+    <input type="text" id="chatInput" placeholder="Ask me anything..." />
+    <button onclick="sendChat()">Send</button>
+  </div>
 
-      chat.innerHTML += `<div><strong>You:</strong> ${message}</div>`;
+  <script>
+    function sendChat() {
+      const input = document.getElementById("chatInput");
+      const chatlog = document.getElementById("chatlog");
+      const userMsg = input.value;
+      if (userMsg.trim() === "") return;
+
+      chatlog.innerHTML += `<div><strong>You:</strong> ${userMsg}</div>`;
+
+      // Simple AI reply logic
+      let reply = "I'm just a test bot, but you're amazing!";
+      if (userMsg.toLowerCase().includes("hello")) reply = "Hey there! I'm Ira Bot 🌸";
+      if (userMsg.toLowerCase().includes("name")) reply = "I'm Ira's little helper bot 💬";
+      if (userMsg.toLowerCase().includes("love")) reply = "Love is beautiful, like Ira 🌹";
+
+      chatlog.innerHTML += `<div><strong>Bot:</strong> ${reply}</div>`;
       input.value = "";
 
-      let botResponse = "I'm not sure how to answer that.";
-      if (message.toLowerCase().includes("ira")) botResponse = "Ira is a lovely person who loves pink, cats, and TikTok!";
-      else if (message.toLowerCase().includes("instagram")) botResponse = "You can follow Ira here: @iamirachka";
-      else if (message.toLowerCase().includes("who are you") || message.toLowerCase().includes("what are you")) botResponse = "I'm IraBot, your AI assistant on Ira's page!";
-
-      chat.innerHTML += `<div><strong>IraBot:</strong> ${botResponse}</div>`;
-      chat.scrollTop = chat.scrollHeight;
+      chatlog.scrollTop = chatlog.scrollHeight;
     }
   </script>
 </body>
 </html>
-"""
-
-final_html_code[:2000]  # previewing first part if needed
