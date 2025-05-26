@@ -1,25 +1,27 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ira's Page</title>
   <style>
     body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: radial-gradient(circle at top left, #fce4ec, #f8bbd0, #fce4ec, #f8bbd0);
-  background-size: 400% 400%;
-  animation: marble 15s ease infinite;
-  display: flex;
-  justify-content: center;
-  padding: 30px;
-}
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: radial-gradient(circle at top left, #fce4ec, #f8bbd0, #fce4ec, #f8bbd0);
+      background-size: 400% 400%;
+      animation: marble 15s ease infinite;
+      display: flex;
+      justify-content: center;
+      padding: 30px;
+    }
 
-@keyframes marble {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
+    @keyframes marble {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
     .container {
       background: #fff;
       border-radius: 16px;
@@ -74,49 +76,79 @@
   <div class="container">
     <img class="profile-pic" src="https://i.postimg.cc/D0tCstqv/498203534-18361057237181744-5946455044392210725-n.jpg" alt="Ira's photo" />
     <h1>Ira</h1>
-    <p>hello, im ira🌸 | Follow me on my socials</p><a
+    <p>hello, im ira🌸 | Follow me on my socials</p>
+
     <iframe class="video" src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+
     <a class="link" href="https://www.instagram.com/iamirachka/">Instagram</a>
-    <a class="link" href="https://www.tiktok.com/@iamirachka2">TikTok 1</a>
-    <a class="link" href="https://www.tiktok.com/@iamirachka.momy">TikTok 2</a>
-    <a class="link" href="https://www.tiktok.com/@1iamirachka1">TikTok 3</a>
-    <a class="link" href="https://www.tiktok.com/@iamirachka3">TikTok 4</a>
-    <a class="link" href="fb://facewebmodal/f?href=https://www.facebook.com/iamirachka" target="_blank">Facebook</a>
+    <a class="link" href="#" onclick="openTikTok('iamirachka2')">TikTok 1</a>
+    <a class="link" href="#" onclick="openTikTok('iamirachka.momy')">TikTok 2</a>
+    <a class="link" href="#" onclick="openTikTok('1iamirachka1')">TikTok 3</a>
+    <a class="link" href="#" onclick="openTikTok('iamirachka3')">TikTok 4</a>
+    <a class="link" href="#" onclick="openFacebook()">Facebook</a>
   </div>
-  
+
   <!-- مؤثرات confetti -->
-<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <audio id="celebration-sound" src="https://cdn.pixabay.com/audio/2022/03/15/audio_621c895f15.mp3" preload="auto"></audio>
 
-<!-- صوت احتفال -->
-<audio id="celebration-sound" src="https://cdn.pixabay.com/audio/2022/03/15/audio_621c895f15.mp3" preload="auto"></audio>
+  <script>
+    // تشغيل المؤثرات عند تحميل الصفحة
+    window.onload = function () {
+      document.getElementById("celebration-sound").play();
 
-<script>
-  window.onload = function () {
-    document.getElementById("celebration-sound").play();
-
-    confetti({
-      particleCount: 150,
-      spread: 90,
-      origin: { y: 0.6 }
-    });
-
-    var duration = 3 * 1000;
-    var animationEnd = Date.now() + duration;
-    var interval = setInterval(function() {
-      if (Date.now() > animationEnd) {
-        clearInterval(interval);
-        return;
-      }
       confetti({
-        particleCount: 5,
-        origin: {
-          x: Math.random(),
-          y: Math.random() - 0.2
-        }
+        particleCount: 150,
+        spread: 90,
+        origin: { y: 0.6 }
       });
-    }, 250);
-  };
-</script>
-  
+
+      var duration = 3 * 1000;
+      var animationEnd = Date.now() + duration;
+      var interval = setInterval(function() {
+        if (Date.now() > animationEnd) {
+          clearInterval(interval);
+          return;
+        }
+        confetti({
+          particleCount: 5,
+          origin: {
+            x: Math.random(),
+            y: Math.random() - 0.2
+          }
+        });
+      }, 250);
+    };
+
+    // فتح TikTok حسب الجهاز
+    function openTikTok(username) {
+      const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+      const isMobile = /android|iphone|ipad|ipod/i.test(userAgent);
+
+      if (isMobile) {
+        window.location = `tiktok://user/@${username}`;
+        setTimeout(() => {
+          window.location = `https://www.tiktok.com/@${username}`;
+        }, 1000);
+      } else {
+        window.open(`https://www.tiktok.com/@${username}`, "_blank");
+      }
+    }
+
+    // فتح Facebook حسب الجهاز
+    function openFacebook() {
+      const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+      const isMobile = /android|iphone|ipad|ipod/i.test(userAgent);
+
+      if (isMobile) {
+        window.location = 'fb://facewebmodal/f?href=https://www.facebook.com/iamirachka';
+        setTimeout(() => {
+          window.location = 'https://www.facebook.com/iamirachka';
+        }, 1000);
+      } else {
+        window.open('https://www.facebook.com/iamirachka', '_blank');
+      }
+    }
+  </script>
 </body>
 </html>
