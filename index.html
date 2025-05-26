@@ -83,5 +83,40 @@
     <a class="link" href="https://www.tiktok.com/@iamirachka3">TikTok 4</a>
     <a class="link" href="https://www.facebook.com/iamirachka/">Facebook</a>
   </div>
+  
+  <!-- مؤثرات confetti -->
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+<!-- صوت احتفال -->
+<audio id="celebration-sound" src="https://cdn.pixabay.com/audio/2022/03/15/audio_621c895f15.mp3" preload="auto"></audio>
+
+<script>
+  window.onload = function () {
+    document.getElementById("celebration-sound").play();
+
+    confetti({
+      particleCount: 150,
+      spread: 90,
+      origin: { y: 0.6 }
+    });
+
+    var duration = 3 * 1000;
+    var animationEnd = Date.now() + duration;
+    var interval = setInterval(function() {
+      if (Date.now() > animationEnd) {
+        clearInterval(interval);
+        return;
+      }
+      confetti({
+        particleCount: 5,
+        origin: {
+          x: Math.random(),
+          y: Math.random() - 0.2
+        }
+      });
+    }, 250);
+  };
+</script>
+  
 </body>
 </html>
