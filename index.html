@@ -3,81 +3,86 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Ira's Page</title>
+  <title>My Social Page</title>
   <style>
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: url('https://i.imgur.com/WyXxBKU.jpg'); /* صورة رخامي وردي */
+      background: url('https://i.imgur.com/t0mHnZc.jpg'); /* خلفية رخام زهري */
       background-size: cover;
       background-repeat: no-repeat;
-      min-height: 100vh;
+      background-attachment: fixed;
       display: flex;
       justify-content: center;
-      align-items: flex-start;
-      padding-top: 40px;
-      position: relative;
-    }
-
-    body::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image: url('https://www.transparenttextures.com/patterns/brushed-alum.png'); /* فرشاة زرقاء */
-      opacity: 0.15;
-      pointer-events: none;
+      padding: 40px 10px;
     }
 
     .container {
       background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(6px);
       border-radius: 20px;
-      padding: 30px 20px;
-      width: 90%;
-            max-width: 400px;
-‎      text-align: center;
-‎      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-‎      position: relative;
-‎      z-index: 1;
-‎    }
-‎
-‎    .profile-pic {
-‎      width: 120px;
-‎      height: 120px;
-‎      border-radius: 50%;
-‎      object-fit: cover;
-‎      border: 4px solid #ff69b4;
-‎      margin-bottom: 20px;
-‎    }
-‎
-‎    .link {
-‎      background-color: #fff0f5;
-‎      color: #d63384;
-‎      border: 2px solid #ffc0cb;
-‎      border-radius: 12px;
-‎      padding: 15px;
-‎      margin: 10px 0;
-‎      text-decoration: none;
-‎      font-weight: bold;
-‎      display: block;
-‎      transition: 0.3s ease;
-‎    }
-‎
-‎    .link:hover {
-‎      background-color: #ffe0eb;
-‎      transform: scale(1.03);
-‎    }
-‎  </style>
-‎</head>
-‎<body>
-‎  <div class="container">
-‎    <img src="https://i.imgur.com/Qx4B5wL.jpg" alt="Ira's photo" class="profile-pic" />
-‎    <a href="https://tiktok.com/@ira1" class="link" target="_blank">TikTok 1</a>
-‎    <a href="https://tiktok.com/@ira2" class="link"
-        <a href="https://tiktok.com/@ira3" class="link" target="_blank">TikTok 3</a>
-‎    <a href="https://tiktok.com/@ira4" class="link" target="_blank">TikTok 4</a>
-‎    <a href="https://instagram.com/ira" class="link" target="_blank">Instagram</a>
-‎    <a href="https://facebook.com/ira" class="link" target="_blank">Facebook</a>
-‎    <a href="https://t.me/ira" class="link" target="_blank">Telegram</a>
-‎  </div>
-‎</body>
-‎</html>
+      padding: 30px;
+      width: 100%;
+      max-width: 420px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      text-align: center;
+      position: relative;
+    }
+
+    .profile-pic {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #fff;
+      margin-bottom: 25px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .link {
+      display: block;
+      background: #f9f1f7;
+      margin: 10px 0;
+      border-radius: 12px;
+      padding: 14px;
+      text-decoration: none;
+      color: #000;
+      font-weight: 500;
+      transition: 0.3s;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    }
+
+    .link:hover {
+      background: #f0dbe7;
+    }
+
+    /* فراشات زرقاء كخلفية إضافية */
+    body::before {
+      content: "";
+      background: url('https://i.imgur.com/w4Y5iBR.png');
+      opacity: 0.15;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background-size: 180px;
+      background-repeat: repeat;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img class="profile-pic" src="https://via.placeholder.com/130" alt="Profile Photo"/>
+
+    <a class="link" href="#">Instagram</a>
+    <a class="link" href="#">TikTok 1</a>
+    <a class="link" href="#">TikTok 2</a>
+    <a class="link" href="#">TikTok 3</a>
+    <a class="link" href="#">TikTok 4</a>
+    <a class="link" href="#">Facebook</a>
+    <a class="link" href="#">Telegram Channel</a>
+  </div>
+</body>
+</html>
