@@ -1,88 +1,79 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>My Social Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ira's Page</title>
   <style>
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: url('https://i.imgur.com/t0mHnZc.jpg'); /* خلفية رخام زهري */
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
+      background: linear-gradient(135deg, #fdfbfb, #ebedee);
       display: flex;
       justify-content: center;
-      padding: 40px 10px;
-    }
-
-    .container {
-      background: rgba(255, 255, 255, 0.85);
-      backdrop-filter: blur(6px);
-      border-radius: 20px;
       padding: 30px;
-      width: 100%;
-      max-width: 420px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-      text-align: center;
-      position: relative;
     }
-
+    .container {
+      background: #fff;
+      border-radius: 16px;
+      padding: 20px;
+      width: 100%;
+      max-width: 480px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      text-align: center;
+    }
     .profile-pic {
-      width: 130px;
-      height: 130px;
+      width: 120px;
+      height: 120px;
       border-radius: 50%;
       object-fit: cover;
-      border: 4px solid #fff;
-      margin-bottom: 25px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      margin-bottom: 15px;
     }
-
+    h1 {
+      font-size: 24px;
+      margin: 10px 0 5px;
+    }
+    p {
+      color: #666;
+      margin: 0 0 20px;
+    }
     .link {
-      display: block;
-      background: #f9f1f7;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f1f1f1;
       margin: 10px 0;
       border-radius: 12px;
       padding: 14px;
       text-decoration: none;
       color: #000;
       font-weight: 500;
-      transition: 0.3s;
       box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      transition: 0.3s;
     }
-
     .link:hover {
-      background: #f0dbe7;
+      background: #e0e0e0;
     }
-
-    /* فراشات زرقاء كخلفية إضافية */
-    body::before {
-      content: "";
-      background: url('https://i.imgur.com/w4Y5iBR.png');
-      opacity: 0.15;
-      position: fixed;
-      top: 0;
-      left: 0;
+    iframe.video {
       width: 100%;
-      height: 100%;
-      z-index: -1;
-      background-size: 180px;
-      background-repeat: repeat;
+      height: 240px;
+      border-radius: 12px;
+      border: none;
+      margin-top: 20px;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <img class="profile-pic" src="https://via.placeholder.com/130" alt="Profile Photo"/>
-
-    <a class="link" href="#">Instagram</a>
-    <a class="link" href="#">TikTok 1</a>
-    <a class="link" href="#">TikTok 2</a>
-    <a class="link" href="#">TikTok 3</a>
-    <a class="link" href="#">TikTok 4</a>
-    <a class="link" href="#">Facebook</a>
-    <a class="link" href="#">Telegram Channel</a>
+    <img class="profile-pic" src="https://via.placeholder.com/120" alt="Ira's photo" />
+    <h1>Ira</h1>
+    <p>Im ira Content Creator | Follow me on my socials</p><a
+    <iframe class="video" src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+    <a class="link" href="https://www.instagram.com/iamirachka/">Instagram</a>
+    <a class="link" href="https://www.tiktok.com/@iamirachka2">TikTok 1</a>
+    <a class="link" href="https://www.tiktok.com/@iamirachka.momy">TikTok 2</a>
+    <a class="link" href="https://www.tiktok.com/@1iamirachka1">TikTok 3</a>
+    <a class="link" href="https://www.tiktok.com/@iamirachka3">TikTok 4</a>
+    <a class="link" href="https://www.facebook.com/iamirachka/">Facebook</a>
   </div>
 </body>
 </html>
