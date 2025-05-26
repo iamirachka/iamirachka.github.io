@@ -2,87 +2,83 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Ira's Page</title>
   <style>
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(135deg, #ffd6ec, #ffe9f3);
-      background-image: url('https://i.ibb.co/xDS9vvw/blue-butterfly.png');
-      background-repeat: repeat;
-      background-size: 100px;
+      background: url('https://i.imgur.com/WyXxBKU.jpg'); /* صورة رخامي وردي */
+      background-size: cover;
+      background-repeat: no-repeat;
+      min-height: 100vh;
       display: flex;
       justify-content: center;
-      padding: 30px;
+      align-items: flex-start;
+      padding-top: 40px;
+      position: relative;
     }
+
+    body::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url('https://www.transparenttextures.com/patterns/brushed-alum.png'); /* فرشاة زرقاء */
+      opacity: 0.15;
+      pointer-events: none;
+    }
+
     .container {
-      background: #fff;
-      border-radius: 16px;
-      padding: 20px;
-      width: 100%;
-      max-width: 480px;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-      text-align: center;
-    }
-    .profile-pic {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 15px;
-      border: 3px solid #ff85b3;
-    }
-    h1 {
-      font-size: 24px;
-      margin: 10px 0 5px;
-      color: #ff2e94;
-    }
-    p {
-      color: #666;
-      margin: 0 0 20px;
-    }
-    .link {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #ffe3f0;
-      margin: 10px 0;
-      border-radius: 12px;
-      padding: 14px;
-      text-decoration: none;
-      color: #000;
-      font-weight: 500;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-      transition: 0.3s;
-    }
-    .link:hover {
-      background: #fcd0e7;
-    }
-    iframe.video {
-      width: 100%;
-      height: 240px;
-      border-radius: 12px;
-      border: none;
-      margin-top: 20px;
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <img class="profile-pic" src="https://via.placeholder.com/120" alt="Ira's photo" />
-    <h1>Ira</h1>
-    <p>Follow me on my socials</p>
-    <a class="link" href="#">@ira.tiktok1 | TikTok</a>
-    <a class="link" href="#">@ira.tiktok2 | TikTok</a>
-    <a class="link" href="#">@ira.tiktok3 | TikTok</a>
-    <a class="link" href="#">@ira.tiktok4 | TikTok</a>
-    <a class="link" href="#">@ira.instagram | Instagram</a>
-    <a class="link" href="#">@ira.facebook | Facebook</a>
-    <a class="link" href="#">@ira.channel | Telegram</a>
-    <iframe class="video" src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
-    <iframe class="video" src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
-  </div>
-</body>
-</html>
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 20px;
+      padding: 30px 20px;
+      width: 90%;
+            max-width: 400px;
+‎      text-align: center;
+‎      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+‎      position: relative;
+‎      z-index: 1;
+‎    }
+‎
+‎    .profile-pic {
+‎      width: 120px;
+‎      height: 120px;
+‎      border-radius: 50%;
+‎      object-fit: cover;
+‎      border: 4px solid #ff69b4;
+‎      margin-bottom: 20px;
+‎    }
+‎
+‎    .link {
+‎      background-color: #fff0f5;
+‎      color: #d63384;
+‎      border: 2px solid #ffc0cb;
+‎      border-radius: 12px;
+‎      padding: 15px;
+‎      margin: 10px 0;
+‎      text-decoration: none;
+‎      font-weight: bold;
+‎      display: block;
+‎      transition: 0.3s ease;
+‎    }
+‎
+‎    .link:hover {
+‎      background-color: #ffe0eb;
+‎      transform: scale(1.03);
+‎    }
+‎  </style>
+‎</head>
+‎<body>
+‎  <div class="container">
+‎    <img src="https://i.imgur.com/Qx4B5wL.jpg" alt="Ira's photo" class="profile-pic" />
+‎    <a href="https://tiktok.com/@ira1" class="link" target="_blank">TikTok 1</a>
+‎    <a href="https://tiktok.com/@ira2" class="link"
+        <a href="https://tiktok.com/@ira3" class="link" target="_blank">TikTok 3</a>
+‎    <a href="https://tiktok.com/@ira4" class="link" target="_blank">TikTok 4</a>
+‎    <a href="https://instagram.com/ira" class="link" target="_blank">Instagram</a>
+‎    <a href="https://facebook.com/ira" class="link" target="_blank">Facebook</a>
+‎    <a href="https://t.me/ira" class="link" target="_blank">Telegram</a>
+‎  </div>
+‎</body>
+‎</html>
 
